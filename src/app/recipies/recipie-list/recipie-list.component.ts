@@ -8,8 +8,7 @@ import { Recipie } from '../recipie.model';
 export class RecipieListComponent implements OnInit {
   recipies: Recipie[] = [
     new Recipie('Test recipie', 'this is a test',
-    `https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05
-    /frying-pan-pizza-easy-recipe-collection.jpg`)
+    `https://www.foodlion.com/content/dam/fresh-ideas/5fallchickenbreastrecipes/5-fall-chicken-recipes-final.jpg.adapt.full.low.jpg`)
   ];
   constructor() { }
 
