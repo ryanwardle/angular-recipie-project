@@ -29,6 +29,10 @@ export class RecipieService {
     return this.recipies.slice();
   }
 
+  getRecipie(id: number) {
+    return this.recipies[id];
+  }
+
   constructor(private shoppingListService: ShoppingListService) {}
 
   addIngredientsToList(ingredients: Ingredient[]) {
