@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+import { RecipieService } from '../recipies.service';
 
 @Component({
   selector: 'app-recipie-edit',
@@ -9,13 +11,40 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class RecipieEditComponent implements OnInit {
   id: number;
   editMode = false;
+  recipieForm: FormGroup;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private recipieService: RecipieService) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.editMode = params['id'] != null;
+      this.initForm();
+    });
+  }
+
+  onSubmit() {
+    console.log(this.recipieForm);
+  }
+
+  private initForm() {
+
+    let recipieName = '';
+    let recipieImagePath = '';
+    let recipieDescription = '';
+
+    if (this.editMode) {
+      const recipie = this.recipieService.getRecipie(this.id);
+      recipieName = recipie.name;
+      recipieImagePath = recipie.imagePath;
+      recipieDescription = recipie.description;
+    }
+
+    this.recipieForm = new FormGroup({
+      'name': new FormControl(recipieName),
+      'imagePath': new FormControl(recipieImagePath),
+      'description': new FormControl(recipieDescription)
     });
   }
 
