@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +17,7 @@ import { ShoppingListService } from '././shopping-list/shopping-list.service';
 import { RecipiesStartComponent } from './recipies/recipies-start/recipies-start.component';
 import { RecipieEditComponent } from './recipies/recipie-edit/recipie-edit.component';
 import { RecipieService } from './recipies/recipies.service';
+import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,10 @@ import { RecipieService } from './recipies/recipies.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [ShoppingListService, RecipieService],
+  providers: [ShoppingListService, RecipieService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

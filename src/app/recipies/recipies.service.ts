@@ -27,6 +27,11 @@ export class RecipieService {
     ])
   ];
 
+  setRecipies(recipies: Recipie[]) {
+    this.recipies = recipies;
+    this.recipiesChanged.next(this.recipies.slice());
+  }
+
   getRecipies() {
     return this.recipies.slice();
   }
