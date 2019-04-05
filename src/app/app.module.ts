@@ -18,6 +18,8 @@ import { RecipiesStartComponent } from './recipies/recipies-start/recipies-start
 import { RecipieEditComponent } from './recipies/recipie-edit/recipie-edit.component';
 import { RecipieService } from './recipies/recipies.service';
 import { DataStorageService } from './shared/data-storage.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DataStorageService } from './shared/data-storage.service';
     ShoppingEditComponent,
     DropdownDirective,
     RecipiesStartComponent,
-    RecipieEditComponent
+    RecipieEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

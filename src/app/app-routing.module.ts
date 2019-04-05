@@ -5,6 +5,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipiesStartComponent } from './recipies/recipies-start/recipies-start.component';
 import { RecipieDetailComponent } from './recipies/recipie-detail/recipie-detail.component';
 import {RecipieEditComponent } from './recipies/recipie-edit/recipie-edit.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/recipies', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const appRoutes: Routes = [
     {path: '', component: RecipiesStartComponent}, {path: 'new', component: RecipieEditComponent},
     {path: ':id', component: RecipieDetailComponent }, {path: ':id/edit', component: RecipieEditComponent }
   ]},
-  {path: 'shopping', component: ShoppingListComponent}
+  {path: 'shopping', component: ShoppingListComponent},
+  {path: 'signup', component: SignupComponent}
 ];
 
 @NgModule({
