@@ -11,7 +11,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: ' AIzaSyCZt1xUO37UZsJH611PwqFJv-uQs6llGYw',
+      // NEED TO PUT KEY BACK
+      apiKey: '',
       domainAuth: 'ng-recipie-book-cdc71.firebaseapp.com'
     });
   }
