@@ -7,7 +7,7 @@ import {RecipieEditComponent } from './recipie-edit/recipie-edit.component';
 import { AuthGuard } from '../auth/auth-guard.service';
 
 const recipiesRoutes: Routes = [
-  {path: 'recipies', component: RecipiesComponent, children: [
+  {path: '', component: RecipiesComponent, children: [
     {path: '', component: RecipiesStartComponent},
     {path: 'new', component: RecipieEditComponent, canActivate: [AuthGuard]},
     {path: ':id', component: RecipieDetailComponent },
