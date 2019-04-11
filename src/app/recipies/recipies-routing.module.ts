@@ -17,9 +17,10 @@ const recipiesRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forChild(recipiesRoutes)
+    RouterModule.forChild(recipiesRoutes),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class RecipiesRoutingModule {
 
